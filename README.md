@@ -15,6 +15,8 @@
 
 #### Access the application's Swagger documentation
 
+The creds for basic authentication is : username:philani password:passeord123
+
 ```
 # http://localhost:8080/swagger-ui/
 
