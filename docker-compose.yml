@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  customer-service:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    links:
+      - redis
+    ports:
+      - 8080:8080
+    depends_on:
+      - technical-assessment
+    networks:
+      - container-network
+
+  technical-assessment:
+    image: "mongo:latest"
+    ports:
+      - 27017:27017
+    networks:
+      - container-network
+
+  redis:
+    image: "redis:alpine"
+    hostname: redis
+    command: [ "redis-server", "--protected-mode", "no" , "--bind", "redis"]
+    ports:
+      - 6379:6379
+    networks:
+      - container-network
+
+networks:
+  container-network:
+    driver: bridge
