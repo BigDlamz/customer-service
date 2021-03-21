@@ -44,7 +44,7 @@ class CustomerControllerTest {
 
     @Test
     @WithMockUser(username = "philani", password = "password123")
-    public void testGeOneCustomer() throws Exception{
+    public void testGeOneCustomer() throws Exception {
 
         when(customerService.find(any())).thenReturn(Customer.builder().custNo("1").name("Philani").surname("Dlamini").build());
 
@@ -57,31 +57,31 @@ class CustomerControllerTest {
 
     @Test
     @WithMockUser(username = "philani", password = "password123")
-    public void testGetAllCustomers() throws Exception{
+    public void testGetAllCustomers() throws Exception {
 
         val firstCustomer = Customer.builder().custNo("1").name("Donald").surname("Trump").build();
         val secondCustomer = Customer.builder().custNo("2").name("David").surname("Beckham").build();
-        List<Customer> customers = Stream.of(firstCustomer,secondCustomer).collect(Collectors.toList());
+        List<Customer> customers = Stream.of(firstCustomer, secondCustomer).collect(Collectors.toList());
 
         when(customerService.findAll()).thenReturn(customers);
 
-        MvcResult result =mockMvc.perform(MockMvcRequestBuilders.get("/customers"))
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/customers"))
                 .andExpect(status().isOk()).andReturn();
 
         val expected = objectMapper.writeValueAsString(customers);
-        val actual  = result.getResponse().getContentAsString();
+        val actual = result.getResponse().getContentAsString();
 
         assertThat(actual).isEqualTo(expected);
     }
 
     @Test
     @WithMockUser(username = "philani", password = "password123")
-    public void testCreateCustomer() throws Exception{
+    public void testCreateCustomer() throws Exception {
 
         val custNo = "2";
         val customerToSave = Customer.builder().custNo(custNo).name("David").surname("Beckham").build();
 
-        doNothing().when(customerService).saveOrUpdate(custNo,customerToSave);
+        doNothing().when(customerService).saveOrUpdate(custNo, customerToSave);
 
         val result = mockMvc.perform(MockMvcRequestBuilders.put("/customers/{id}", custNo)
                 .contentType("application/json")
