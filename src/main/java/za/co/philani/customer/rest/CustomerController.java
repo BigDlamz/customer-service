@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @Slf4j
-@RequestMapping("api/v1/customers")
+@RequestMapping("/customers")
 @Validated
 public class CustomerController implements CustomerResource {
 
