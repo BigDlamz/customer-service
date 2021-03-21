@@ -61,29 +61,26 @@ class CustomerControllerTest {
 
         val firstCustomer = Customer.builder().custNo("1").name("Donald").surname("Trump").build();
         val secondCustomer = Customer.builder().custNo("2").name("David").surname("Beckham").build();
-
         List<Customer> customers = Stream.of(firstCustomer,secondCustomer).collect(Collectors.toList());
 
         when(customerService.findAll()).thenReturn(customers);
 
         MvcResult result =mockMvc.perform(MockMvcRequestBuilders.get("/customers"))
                 .andExpect(status().isOk()).andReturn();
+
         val expected = objectMapper.writeValueAsString(customers);
-        log.info("Expected => {}", expected);
         val actual  = result.getResponse().getContentAsString();
-        log.info("Actual => {}", actual);
+
         assertThat(actual).isEqualTo(expected);
     }
 
     @Test
     @WithMockUser(username = "philani", password = "password123")
     public void testCreateCustomer() throws Exception{
-        val custNo = "2";
 
+        val custNo = "2";
         val customerToSave = Customer.builder().custNo(custNo).name("David").surname("Beckham").build();
 
-        String expected = "Customer number 2 saved successfully";
-        log.info("Expected => {}", expected);
         doNothing().when(customerService).saveOrUpdate(custNo,customerToSave);
 
         val result = mockMvc.perform(MockMvcRequestBuilders.put("/customers/{id}", custNo)
@@ -91,8 +88,9 @@ class CustomerControllerTest {
                 .content(objectMapper.writeValueAsString(customerToSave)))
                 .andExpect(status().isOk()).andReturn();
 
+        val expected = "Customer number 2 saved successfully";
         val actual = result.getResponse().getContentAsString();
-        log.info("Actual => {}", actual);
+
         assertThat(expected).isEqualTo(actual);
     }
 }
