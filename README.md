@@ -17,7 +17,8 @@
 
 ```
 # http://localhost:8080/swagger-ui/
-
+# username: philani
+# password: password123
 ```
 
 #### Health
