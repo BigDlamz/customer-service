@@ -10,7 +10,7 @@ management:
 spring:
   data:
     mongodb:
-      host: technical-assessment
+      host: mongo-db
       port: 27017
   redis:
     host: redis

@@ -10,11 +10,11 @@ services:
     ports:
       - 8080:8080
     depends_on:
-      - technical-assessment
+      - mongo-db
     networks:
       - container-network
 
-  technical-assessment:
+  mongo-db:
     image: "mongo:latest"
     ports:
       - 27017:27017
