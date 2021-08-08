@@ -1,4 +1,4 @@
-package za.co.philani.customer.exception;
+package za.co.philani.customer.service.exception;
 
 import lombok.Builder;
 import lombok.Data;

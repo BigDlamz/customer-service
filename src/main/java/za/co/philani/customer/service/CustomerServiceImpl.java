@@ -6,9 +6,8 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import za.co.philani.customer.exception.CustomerNotFound;
-import za.co.philani.customer.model.Customer;
-import za.co.philani.customer.repository.CustomerRepository;
+import za.co.philani.customer.service.exception.CustomerNotFound;
+import za.co.philani.customer.service.repository.CustomerRepository;
 
 import java.util.List;
 import java.util.Optional;

@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import za.co.philani.customer.model.Customer;
+import za.co.philani.customer.service.Customer;
 import za.co.philani.customer.service.CustomerService;
 
 import java.util.List;

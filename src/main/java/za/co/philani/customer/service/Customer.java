@@ -1,4 +1,4 @@
-package za.co.philani.customer.model;
+package za.co.philani.customer.service;
 
 import lombok.Builder;
 import lombok.Data;

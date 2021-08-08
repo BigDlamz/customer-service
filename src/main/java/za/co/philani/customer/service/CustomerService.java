@@ -1,7 +1,6 @@
 package za.co.philani.customer.service;
 
-import za.co.philani.customer.exception.CustomerNotFound;
-import za.co.philani.customer.model.Customer;
+import za.co.philani.customer.service.exception.CustomerNotFound;
 
 import java.util.List;
 

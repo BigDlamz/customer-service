@@ -7,8 +7,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import za.co.philani.customer.model.Customer;
-import za.co.philani.customer.repository.CustomerRepository;
+import za.co.philani.customer.service.repository.CustomerRepository;
 
 import java.util.List;
 import java.util.Optional;

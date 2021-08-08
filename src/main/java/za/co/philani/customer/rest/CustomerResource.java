@@ -2,7 +2,7 @@ package za.co.philani.customer.rest;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
-import za.co.philani.customer.model.Customer;
+import za.co.philani.customer.service.Customer;
 
 import javax.validation.Valid;
 import java.util.List;

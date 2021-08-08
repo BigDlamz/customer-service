@@ -1,8 +1,8 @@
-package za.co.philani.customer.repository;
+package za.co.philani.customer.service.repository;
 
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import za.co.philani.customer.model.Customer;
+import za.co.philani.customer.service.Customer;
 
 import java.util.List;
 import java.util.Optional;
