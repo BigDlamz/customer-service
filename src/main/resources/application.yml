@@ -6,16 +6,19 @@ management:
       exposure:
         include: health
 
-#Database
+#Databases
 spring:
   data:
+    #Mongo
     mongodb:
       host: mongo-db
       port: 27017
-  redis:
-    host: redis
-    port: 6379
+    #Redis
+    redis:
+      host: redis
+      port: 6379
 
+#Security
   security:
     user:
       name: philani
