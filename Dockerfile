@@ -7,5 +7,5 @@ RUN mvn package
 
 FROM adoptopenjdk/openjdk11
 MAINTAINER baeldung.com
-COPY target/customer-service-1.0.0.jar customer-service-1.0.0.jar
-ENTRYPOINT ["java","-jar","/customer-service-1.0.0.jar"]
+COPY target/customer-service.jar customer-service.jar
+ENTRYPOINT ["java","-jar","/customer-service.jar"]
